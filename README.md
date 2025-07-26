@@ -1,1 +1,2 @@
-# Portfolio
+# Lucky Mkhatshwa's Personal Portfolio Website
+This repository contains the source code for Lucky Mkhatshwa's personal portfolio website, showcasing his skills, experience, projects, and contact information. The website is designed to be clean, modern, and fully responsive, built using HTML, CSS, and JavaScript.

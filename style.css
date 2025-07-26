@@ -1,0 +1,174 @@
+/* Custom CSS */
+:root {
+    --primary-color: #333333; /* Dark text/accent color, similar to the example's text */
+    --primary-hover-color: #000000; /* Even darker for hover effects on general elements */
+    --text-dark: #333333; /* Main body text color */
+    --text-light: #f5f5f5; /* For text on dark backgrounds */
+    --bg-light: #F8F8F8; /* Very light grey background, matching the example */
+    --bg-dark: #E0E0E0; /* Slightly darker grey for subtle section breaks */
+    --shadow-light: rgba(0, 0, 0, 0.03); /* Very subtle shadow */
+    --shadow-medium: rgba(0, 0, 0, 0.08); /* Slightly more visible shadow */
+
+    /* Colors for circular buttons from the example */
+    --button-orange: #F7B731;
+    --button-red: #EB5757;
+    --button-blue: #56CCF2;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+/* Utility classes for animations */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.6s ease-out;
+}
+
+.fade-in.appear {
+    opacity: 1;
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--bg-light); /* Matches main background */
+    box-shadow: none; /* Removed shadow to match example's minimal navbar */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-link {
+    color: var(--text-dark);
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: var(--primary-hover-color); /* Darker on hover */
+}
+
+/* Circular Buttons */
+.btn-circle {
+    width: 120px; /* Adjust size as needed */
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white; /* Text color for buttons */
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 6px -1px var(--shadow-medium);
+}
+
+.btn-circle:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px var(--shadow-medium);
+}
+
+.btn-orange {
+    background-color: var(--button-orange);
+}
+.btn-red {
+    background-color: var(--button-red);
+}
+.btn-blue {
+    background-color: var(--button-blue);
+}
+
+/* Card styles */
+.card {
+    background-color: var(--bg-light);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 10px var(--shadow-light);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px var(--shadow-medium);
+}
+
+/* Profile picture - large for hero section */
+.profile-pic-large {
+    width: 250px; /* Larger size for hero section */
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    /* Removed border and shadow to match the example's clean look */
+    border: none;
+    box-shadow: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section .container {
+        flex-direction: column; /* Stack elements on small screens */
+    }
+    .hero-section .profile-pic-large {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 2rem; /* Add space below image */
+    }
+    .hero-content h1 {
+        font-size: 4rem; /* Adjust for mobile */
+    }
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--bg-light);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 1rem 0;
+        box-shadow: var(--shadow-medium);
+    }
+    .navbar-menu.active {
+        display: flex;
+    }
+    .navbar-menu a {
+        padding: 0.75rem 1.5rem;
+        text-align: center;
+    }
+    .hamburger {
+        display: block;
+    }
+    .skills-grid, .services-grid, .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    .btn-circle {
+        width: 100px;
+        height: 100px;
+        font-size: 0.9rem;
+    }
+}
