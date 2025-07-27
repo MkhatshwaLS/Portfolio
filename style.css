@@ -1,174 +1,293 @@
-/* Custom CSS */
-:root {
-    --primary-color: #333333; /* Dark text/accent color, similar to the example's text */
-    --primary-hover-color: #000000; /* Even darker for hover effects on general elements */
-    --text-dark: #333333; /* Main body text color */
-    --text-light: #f5f5f5; /* For text on dark backgrounds */
-    --bg-light: #F8F8F8; /* Very light grey background, matching the example */
-    --bg-dark: #E0E0E0; /* Slightly darker grey for subtle section breaks */
-    --shadow-light: rgba(0, 0, 0, 0.03); /* Very subtle shadow */
-    --shadow-medium: rgba(0, 0, 0, 0.08); /* Slightly more visible shadow */
-
-    /* Colors for circular buttons from the example */
-    --button-orange: #F7B731;
-    --button-red: #EB5757;
-    --button-blue: #56CCF2;
+/* Base Layout and Container */
+.BodyLayout {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+  scroll-behavior: smooth;
 }
 
-body {
-    font-family: 'Inter', sans-serif;
-    color: var(--text-dark);
-    background-color: var(--bg-light);
-    line-height: 1.6;
-    scroll-behavior: smooth;
+.ContainerLayout {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
-    color: var(--text-dark);
-    font-weight: 700;
+/* Header & Navigation */
+.HeaderNavigation {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
-/* Utility classes for animations */
+.BrandTitle {
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #222;
+}
+
+.MenuToggle {
+  display: none;
+}
+
+.NavigationMenu {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.NavigationLink {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+}
+
+.NavigationLink:hover::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #f15a24;
+}
+
+/* Hero Section */
+.HeroSection {
+  padding: 4rem 0;
+  background: #fafafa;
+  text-align: center;
+}
+
+.ProfileImage {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.MainHeading {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+}
+
+.SubHeading {
+  font-size: 1.25rem;
+  color: #777;
+}
+
+.ParagraphBox {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 1rem auto;
+}
+
+/* Action Buttons */
+.ActionButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.CircleButtonOrange,
+.CircleButtonRed,
+.CircleButtonBlue {
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.CircleButtonOrange {
+  background: #f15a24;
+}
+
+.CircleButtonRed {
+  background: #e63946;
+}
+
+.CircleButtonBlue {
+  background: #1d3557;
+}
+
+.CircleButtonOrange:hover {
+  background: #d94f1f;
+}
+.CircleButtonRed:hover {
+  background: #c5303b;
+}
+.CircleButtonBlue:hover {
+  background: #16324c;
+}
+
+/* Section Headings */
+.SectionTitle {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* About, Experience, Skills, Portfolio */
+.SubTitle {
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  color: #444;
+}
+
+/* Experience */
+.ExperienceGrid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.ExperienceCard {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.JobTitle {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.CompanyName,
+.JobDates {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.ExperienceList {
+  padding-left: 1.2rem;
+}
+
+/* Skills */
+.SkillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.TechnicalSkills,
+.SoftSkills {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Portfolio */
+.PortfolioGrid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.PortfolioCard {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.ProjectTitle {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.TextButton {
+  color: #f15a24;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.TextButton:hover {
+  text-decoration: underline;
+}
+
+/* Contact Section */
+.ContactCard {
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.SocialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.SocialLink {
+  text-decoration: none;
+  color: #1d3557;
+  font-weight: 600;
+}
+
+/* Footer */
+.FooterSection {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Animation Effects */
 .fade-in-up {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.fade-in-up.appear {
-    opacity: 1;
-    transform: translateY(0);
+.appear {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.fade-in {
-    opacity: 0;
-    transition: opacity 0.6s ease-out;
-}
-
-.fade-in.appear {
-    opacity: 1;
-}
-
-/* Navigation */
-.navbar {
-    background-color: var(--bg-light); /* Matches main background */
-    box-shadow: none; /* Removed shadow to match example's minimal navbar */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.nav-link {
-    color: var(--text-dark);
-    transition: color 0.3s ease-in-out;
-}
-
-.nav-link:hover {
-    color: var(--primary-hover-color); /* Darker on hover */
-}
-
-/* Circular Buttons */
-.btn-circle {
-    width: 120px; /* Adjust size as needed */
-    height: 120px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: white; /* Text color for buttons */
-    text-align: center;
-    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
-    box-shadow: 0 4px 6px -1px var(--shadow-medium);
-}
-
-.btn-circle:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px var(--shadow-medium);
-}
-
-.btn-orange {
-    background-color: var(--button-orange);
-}
-.btn-red {
-    background-color: var(--button-red);
-}
-.btn-blue {
-    background-color: var(--button-blue);
-}
-
-/* Card styles */
-.card {
-    background-color: var(--bg-light);
-    border-radius: 0.75rem;
-    box-shadow: 0 4px 10px var(--shadow-light);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px var(--shadow-medium);
-}
-
-/* Profile picture - large for hero section */
-.profile-pic-large {
-    width: 250px; /* Larger size for hero section */
-    height: 250px;
-    object-fit: cover;
-    border-radius: 50%;
-    /* Removed border and shadow to match the example's clean look */
-    border: none;
-    box-shadow: none;
-}
-
-/* Responsive adjustments */
+/* Responsive Styles */
 @media (max-width: 768px) {
-    .hero-section .container {
-        flex-direction: column; /* Stack elements on small screens */
-    }
-    .hero-section .profile-pic-large {
-        width: 200px;
-        height: 200px;
-        margin-bottom: 2rem; /* Add space below image */
-    }
-    .hero-content h1 {
-        font-size: 4rem; /* Adjust for mobile */
-    }
-    .hero-content h2 {
-        font-size: 2rem;
-    }
-    .hero-content p {
-        font-size: 1rem;
-    }
-    .navbar-menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: var(--bg-light);
-        position: absolute;
-        top: 100%;
-        left: 0;
-        padding: 1rem 0;
-        box-shadow: var(--shadow-medium);
-    }
-    .navbar-menu.active {
-        display: flex;
-    }
-    .navbar-menu a {
-        padding: 0.75rem 1.5rem;
-        text-align: center;
-    }
-    .hamburger {
-        display: block;
-    }
-    .skills-grid, .services-grid, .portfolio-grid {
-        grid-template-columns: 1fr;
-    }
-    .btn-circle {
-        width: 100px;
-        height: 100px;
-        font-size: 0.9rem;
-    }
+  .NavigationMenu {
+    flex-direction: column;
+    display: none;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .NavigationMenu.active {
+    display: flex;
+  }
+
+  .MenuToggle {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url('menu-icon.svg') center center / contain no-repeat;
+    cursor: pointer;
+  }
+
+  .ActionButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .SkillsGrid {
+    flex-direction: column;
+  }
 }
